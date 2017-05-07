@@ -1,0 +1,27 @@
+{
+  "name": "webpack.cfg",
+  "version": "0.0.1",
+  "description": "An easy to use Webpack 2 configuration library",
+  "main": "dist/webpack.cfg.js",
+  "scripts": {
+    "build": "buble ./webpack.cfg.js -mo ./dist/webpack.cfg.js",
+    "test": "standard ./webpack.cfg.js ./test/**/*.js && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/termosa/webpack.cfg.git"
+  },
+  "keywords": [
+    "webpack",
+    "config",
+    "manager",
+    "setup"
+  ],
+  "author": "Stanislav Termosa <termosa.stanislav@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "buble": "^0.15.2",
+    "standard": "^10.0.2"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"webpack.cfg.js","sources":["../webpack.cfg.js"],"sourcesContent":["module.exports = (origin = {}) => origin\n"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,GAAG,SAAA,CAAC,MAAW,EAAE,AAAG,CAAV;gCAAA,GAAG,EAAE;AAAK;QAAA,MAAM;AAAA,CAAA;"}
