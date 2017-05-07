@@ -1,10 +1,28 @@
-import test from 'ava'
-import webpackCfg from '..'
+/* eslint-env mocha */
 
-test('webpack.cfg is a function', t =>
-  t.is(typeof webpackCfg, 'function')
-)
+var expect = require('chai').expect
+var webpackCfg = require('..')
 
-test.todo('webpack.cfg returns object equal to an argument')
+describe('webpack.cfg library', function () {
+  it('should be a function', function () {
+    expect(webpackCfg).to.be.instanceof(Function)
+  })
 
-test.todo('changes to webpack.cfg result object doesn\'t have side-effects')
+  it('should return object equal to an argument', function () {
+    var source = {
+      output: { filename: 'build.js' }
+    }
+    var sourceCopy = JSON.parse(JSON.stringify(source))
+    expect(webpackCfg(source)).to.be.deep.equal(sourceCopy)
+  })
+
+  it('should not return object with links to any part of origin object', function () {
+    var source = {
+      output: { filename: 'build.js' }
+    }
+    var sourceCopy = JSON.parse(JSON.stringify(source))
+    var config = webpackCfg(source)
+    config.output.filename = 'bundle.js'
+    expect(config).not.to.be.deep.equal(sourceCopy)
+  })
+})
